@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  block-watcher:
+    image: node:lts
+    container_name: block-watcher
+    restart: always
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: ["/bin/sh", "-c", "npm install dotenv && node Noti.js"]
